@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const createCookie = (flavor) => (document.cookie = `fe-flavor=${flavor}`);
+  const printCookies = () => console.log(document.cookie);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h2>Cookies Demo</h2>
+      <section>
+        <p>Front-end generated cookies</p>
+        <button onClick={() => createCookie('vanilla')}>
+          Create vanilla cookie
+        </button>
+        <button onClick={() => createCookie('chocolate')}>
+          Create chocolate cookie
+        </button>
+      </section>
+      <br />
+      <section>
+        <p>Back-end generated cookies</p>
+        <button onClick={() => createCookie('vanilla')}>
+          Create vanilla cookie
+        </button>
+        <button onClick={() => createCookie('chocolate')}>
+          Create chocolate cookie
+        </button>
+      </section>
+      <br />
+      <section>
+        <p>Debug</p>
+        <button onClick={printCookies}>Print cookies</button>
+      </section>
     </div>
   );
 }
